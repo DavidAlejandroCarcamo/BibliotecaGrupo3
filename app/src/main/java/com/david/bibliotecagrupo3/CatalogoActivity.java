@@ -26,7 +26,8 @@ public class CatalogoActivity extends AppCompatActivity {
     }
 
     public void abrirAutores(View v) {
-        Toast.makeText(this, "Aquí se registrarán los autores", Toast.LENGTH_SHORT).show();
+        Intent abrir = new Intent(this, AutoresActivity.class);
+        startActivity(abrir);
     }
 
     public void abrirEditoriales(View v) {
