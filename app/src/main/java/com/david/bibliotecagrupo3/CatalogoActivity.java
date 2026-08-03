@@ -46,7 +46,8 @@ public class CatalogoActivity extends AppCompatActivity {
     }
 
     public void abrirEjemplares(View v) {
-        Toast.makeText(this, "Aquí se registrarán los ejemplares", Toast.LENGTH_SHORT).show();
+        Intent abrir = new Intent(this, EjemplaresActivity.class);
+        startActivity(abrir);
     }
 
     public void regresar(View v) {
