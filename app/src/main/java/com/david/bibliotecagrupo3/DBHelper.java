@@ -7,10 +7,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String NOMBRE_BD = "biblioteca.db";
-    private static final int VERSION_BD = 1;
+    private static final int VERSION_BD = 2;
 
     public DBHelper(Context context) {
         super(context, NOMBRE_BD, null, VERSION_BD);
+    }
+
+    @Override
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.setForeignKeyConstraintsEnabled(true);
     }
 
     @Override
@@ -24,6 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE usuarios (" +
                 "id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "id_rol INTEGER NOT NULL, " +
+                "usuario TEXT NOT NULL UNIQUE, " +
                 "nombres TEXT NOT NULL, " +
                 "apellidos TEXT NOT NULL, " +
                 "correo TEXT NOT NULL UNIQUE, " +
@@ -126,13 +133,13 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('Administrador', 'Usuario con acceso completo al sistema')");
 
         db.execSQL("INSERT INTO roles(nombre, descripcion) VALUES " +
-                "('Bibliotecario', 'Usuario encargado de préstamos y devoluciones')");
+                "('Bibliotecario', 'Usuario encargado de prestamos y devoluciones')");
 
-        db.execSQL("INSERT INTO usuarios(id_rol, nombres, apellidos, correo, telefono, password_hash, pregunta_recuperacion, respuesta_hash, estado, fecha_registro) VALUES " +
-                "(1, 'Admin', 'Principal', 'admin@biblioteca.com', '99999999', '1234', 'Color favorito', 'azul', 'Activo', '2026-08-02')");
+        db.execSQL("INSERT INTO usuarios(id_rol, usuario, nombres, apellidos, correo, telefono, password_hash, pregunta_recuperacion, respuesta_hash, estado, fecha_registro) VALUES " +
+                "(1, 'admin', 'Admin', 'Principal', 'admin@biblioteca.com', '99999999', '1234', 'Color favorito', 'azul', 'Activo', '2026-08-03')");
 
-        db.execSQL("INSERT INTO usuarios(id_rol, nombres, apellidos, correo, telefono, password_hash, pregunta_recuperacion, respuesta_hash, estado, fecha_registro) VALUES " +
-                "(2, 'Bibliotecario', 'General', 'bibliotecario@biblioteca.com', '88888888', '2026', 'Color favorito', 'verde', 'Activo', '2026-08-02')");
+        db.execSQL("INSERT INTO usuarios(id_rol, usuario, nombres, apellidos, correo, telefono, password_hash, pregunta_recuperacion, respuesta_hash, estado, fecha_registro) VALUES " +
+                "(2, 'bibliotecario', 'Bibliotecario', 'General', 'bibliotecario@biblioteca.com', '88888888', '2026', 'Color favorito', 'verde', 'Activo', '2026-08-03')");
     }
 
     @Override
