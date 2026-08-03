@@ -73,8 +73,8 @@ public class DashboardActivity extends AppCompatActivity {
 
             } else if (opcion.equals("Catálogo")) {
 
-                txtContenido.setText("Módulo de Catálogo");
-                Toast.makeText(this, "Aquí estarán autores, editoriales, categorías, libros y ejemplares", Toast.LENGTH_SHORT).show();
+                Intent abrir = new Intent(this, CatalogoActivity.class);
+                startActivity(abrir);
 
             } else if (opcion.equals("Préstamos")) {
 
