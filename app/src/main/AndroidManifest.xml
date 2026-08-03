@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BibliotecaGrupo3">
         <activity
+            android:name=".EditorialesActivity"
+            android:exported="false" />
+        <activity
             android:name=".AutoresActivity"
             android:exported="false" />
         <activity

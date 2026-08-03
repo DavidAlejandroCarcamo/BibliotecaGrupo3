@@ -31,7 +31,8 @@ public class CatalogoActivity extends AppCompatActivity {
     }
 
     public void abrirEditoriales(View v) {
-        Toast.makeText(this, "Aquí se registrarán las editoriales", Toast.LENGTH_SHORT).show();
+        Intent abrir = new Intent(this, EditorialesActivity.class);
+        startActivity(abrir);
     }
 
     public void abrirCategorias(View v) {
