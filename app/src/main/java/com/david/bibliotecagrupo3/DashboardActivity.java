@@ -82,10 +82,10 @@ public class DashboardActivity extends AppCompatActivity {
                 abrir.putExtra("usuario", usuario);
                 startActivity(abrir);
 
-            } else if (opcion.equals("Devoluciones")) {
+            }  else if (opcion.equals("Devoluciones")) {
 
-                txtContenido.setText("Módulo de Devoluciones");
-                Toast.makeText(this, "Aquí se registrarán las devoluciones", Toast.LENGTH_SHORT).show();
+                Intent abrir = new Intent(this, DevolucionesActivity.class);
+                startActivity(abrir);
 
             } else if (opcion.equals("Reportes")) {
 
