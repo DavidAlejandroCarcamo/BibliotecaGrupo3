@@ -216,4 +216,60 @@ public class UsuarioDAO {
 
         return resultado > 0;
     }
+    public String obtenerPreguntaRecuperacion(String usuario) {
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(
+                "SELECT pregunta_recuperacion FROM usuarios WHERE usuario = ? AND estado = 'Activo'",
+                new String[]{usuario}
+        );
+
+        String pregunta = "";
+
+        if (cursor.moveToFirst()) {
+            pregunta = cursor.getString(0);
+        }
+
+        cursor.close();
+        db.close();
+
+        return pregunta;
+    }
+
+    public boolean validarRespuestaRecuperacion(String usuario, String respuesta) {
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(
+                "SELECT * FROM usuarios WHERE usuario = ? AND respuesta_hash = ? AND estado = 'Activo'",
+                new String[]{usuario, respuesta}
+        );
+
+        boolean existe = cursor.getCount() > 0;
+
+        cursor.close();
+        db.close();
+
+        return existe;
+    }
+
+    public boolean cambiarPassword(String usuario, String nuevaPassword) {
+
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ContentValues valores = new ContentValues();
+        valores.put("password_hash", nuevaPassword);
+
+        int resultado = db.update(
+                "usuarios",
+                valores,
+                "usuario = ?",
+                new String[]{usuario}
+        );
+
+        db.close();
+
+        return resultado > 0;
+    }
 }

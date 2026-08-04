@@ -66,4 +66,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
         }
     }
+    public void abrirRecuperar(View v) {
+        Intent abrir = new Intent(this, RecuperarActivity.class);
+        startActivity(abrir);
+    }
 }

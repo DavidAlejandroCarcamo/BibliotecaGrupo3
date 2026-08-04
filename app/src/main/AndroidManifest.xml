@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BibliotecaGrupo3">
         <activity
+            android:name=".RecuperarActivity"
+            android:exported="false" />
+        <activity
             android:name=".ReportesActivity"
             android:exported="false" />
         <activity
