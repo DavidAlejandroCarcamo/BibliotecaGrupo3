@@ -78,8 +78,9 @@ public class DashboardActivity extends AppCompatActivity {
 
             } else if (opcion.equals("Préstamos")) {
 
-                txtContenido.setText("Módulo de Préstamos");
-                Toast.makeText(this, "Aquí se registrarán los préstamos", Toast.LENGTH_SHORT).show();
+                Intent abrir = new Intent(this, PrestamosActivity.class);
+                abrir.putExtra("usuario", usuario);
+                startActivity(abrir);
 
             } else if (opcion.equals("Devoluciones")) {
 
