@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7FF"
+    tools:context=".UsuariosActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="35dp"
+            android:paddingTop="35dp"
+            android:paddingEnd="35dp"
+            android:paddingBottom="35dp">
+
+            <Button
+                android:id="@+id/btnRegresar"
+                android:layout_width="49dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#6F50B5"
+                android:includeFontPadding="false"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="regresar"
+                android:paddingStart="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="8dp"
+                android:text="←"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTituloUsuarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="Usuarios"
+                android:textColor="#3F3A46"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:hint="Usuario"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/txtNombresUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Nombres"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/txtApellidosUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Apellidos"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/txtCorreoUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Correo"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/txtTelefonoUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Teléfono"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/txtPasswordUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Contraseña"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/txtPreguntaUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Pregunta de recuperación"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/txtRespuestaUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Respuesta de recuperación"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/txtFechaRegistroUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Fecha de registro  Ej: 2026-08-03"
+                android:inputType="date" />
+
+            <Spinner
+                android:id="@+id/spRolUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <Spinner
+                android:id="@+id/spEstadoUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnGuardarUsuario"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#6F50B5"
+                    android:onClick="guardarUsuario"
+                    android:text="Guardar"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnActualizarUsuario"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#6F50B5"
+                    android:onClick="actualizarUsuario"
+                    android:text="Actualizar"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnLimpiar"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#8D77CC"
+                    android:onClick="limpiarCampos"
+                    android:text="Limpiar"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnDesactivarUsuario"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#8D77CC"
+                    android:onClick="desactivarUsuario"
+                    android:text="Desactivar"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtListaTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="Lista de usuarios"
+                android:textColor="#3F3A46"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/listaUsuarios"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="12dp"
+                android:background="#EEE7FA" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

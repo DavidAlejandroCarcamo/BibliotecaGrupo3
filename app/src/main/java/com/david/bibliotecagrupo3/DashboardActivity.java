@@ -68,8 +68,8 @@ public class DashboardActivity extends AppCompatActivity {
 
             } else if (opcion.equals("Usuarios")) {
 
-                txtContenido.setText("Módulo de Usuarios");
-                Toast.makeText(this, "Aquí se administrarán los usuarios", Toast.LENGTH_SHORT).show();
+                Intent abrir = new Intent(this, UsuariosActivity.class);
+                startActivity(abrir);
 
             } else if (opcion.equals("Catálogo")) {
 
