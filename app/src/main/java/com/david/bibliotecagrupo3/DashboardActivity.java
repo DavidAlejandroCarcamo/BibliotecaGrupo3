@@ -89,8 +89,8 @@ public class DashboardActivity extends AppCompatActivity {
 
             } else if (opcion.equals("Reportes")) {
 
-                txtContenido.setText("Módulo de Reportes");
-                Toast.makeText(this, "Aquí se mostrarán los reportes", Toast.LENGTH_SHORT).show();
+                Intent abrir = new Intent(this, ReportesActivity.class);
+                startActivity(abrir);
 
             } else if (opcion.equals("Cerrar sesión")) {
 
