@@ -5,8 +5,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF7FF"
+    android:background="#F5F1EC"
     tools:context=".PrestamosActivity">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:background="#7D523B"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnRegresar"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="regresar"
+            android:text="Regresar"
+            android:textAllCaps="false"
+            android:textColor="#7D523B"
+            android:textStyle="bold"
+            app:cornerRadius="24dp" />
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="0dp"
@@ -15,36 +42,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/topBar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingStart="35dp"
-            android:paddingTop="35dp"
+            android:paddingTop="30dp"
             android:paddingEnd="35dp"
             android:paddingBottom="35dp">
-
-            <Button
-                android:id="@+id/btnRegresar"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:backgroundTint="#6F50B5"
-                android:onClick="regresar"
-                android:text="Regresar"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtTituloPrestamos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Préstamos"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -52,44 +67,56 @@
                 android:id="@+id/spUsuarioPrestamo"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:backgroundTint="#6E6259" />
 
             <Spinner
                 android:id="@+id/spEjemplarPrestamo"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="50dp"
+                android:backgroundTint="#6E6259" />
 
             <EditText
                 android:id="@+id/txtFechaPrestamo"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:backgroundTint="#6E6259"
                 android:hint="Fecha préstamo  Ej: 2026-08-03"
-                android:inputType="date" />
+                android:inputType="date"
+                android:textColor="#4A3428"
+                android:textColorHint="#AAA19A" />
 
             <EditText
                 android:id="@+id/txtFechaVencimiento"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:backgroundTint="#6E6259"
                 android:hint="Fecha vencimiento  Ej: 2026-08-10"
-                android:inputType="date" />
+                android:inputType="date"
+                android:textColor="#4A3428"
+                android:textColorHint="#AAA19A" />
 
             <Spinner
                 android:id="@+id/spEstadoPrestamo"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="50dp"
+                android:backgroundTint="#6E6259" />
 
             <EditText
                 android:id="@+id/txtObservacionesPrestamo"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:backgroundTint="#6E6259"
                 android:gravity="top"
                 android:hint="Observaciones"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textColor="#4A3428"
+                android:textColorHint="#AAA19A" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="24dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -98,12 +125,13 @@
                     android:layout_height="55dp"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#6F50B5"
+                    android:backgroundTint="#7D523B"
                     android:onClick="guardarPrestamo"
                     android:text="Guardar"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:cornerRadius="28dp" />
 
                 <Button
                     android:id="@+id/btnActualizarPrestamo"
@@ -111,12 +139,13 @@
                     android:layout_height="55dp"
                     android:layout_marginStart="8dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#6F50B5"
+                    android:backgroundTint="#7D523B"
                     android:onClick="actualizarPrestamo"
                     android:text="Actualizar"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:cornerRadius="28dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -131,12 +160,13 @@
                     android:layout_height="50dp"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#8D77CC"
+                    android:backgroundTint="#B58855"
                     android:onClick="limpiarCampos"
                     android:text="Limpiar"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:cornerRadius="28dp" />
 
                 <Button
                     android:id="@+id/btnEliminarPrestamo"
@@ -144,22 +174,23 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#8D77CC"
+                    android:backgroundTint="#B58855"
                     android:onClick="eliminarPrestamo"
                     android:text="Eliminar"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:cornerRadius="28dp" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/txtListaTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="28dp"
                 android:gravity="center"
                 android:text="Lista de préstamos"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -168,7 +199,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_marginTop="12dp"
-                android:background="#EEE7FA" />
+                android:background="#E9DED7" />
 
         </LinearLayout>
     </ScrollView>

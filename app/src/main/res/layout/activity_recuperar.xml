@@ -68,7 +68,7 @@
                 android:layout_marginTop="35dp"
                 android:backgroundTint="#6E6259"
                 android:hint="Ingrese su usuario"
-                android:hintTextColor="#AAA19A"
+                android:textColorHint="#AAA19A"
                 android:inputType="text"
                 android:textColor="#4A3428"
                 android:textSize="16sp" />
@@ -105,7 +105,7 @@
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#6E6259"
                 android:hint="Respuesta"
-                android:hintTextColor="#AAA19A"
+                android:textColorHint="#AAA19A"
                 android:inputType="text"
                 android:textColor="#4A3428"
                 android:textSize="16sp" />
@@ -116,7 +116,7 @@
                 android:layout_height="50dp"
                 android:backgroundTint="#6E6259"
                 android:hint="Nueva contraseña"
-                android:hintTextColor="#AAA19A"
+                android:textColorHint="#AAA19A"
                 android:inputType="textPassword"
                 android:textColor="#4A3428"
                 android:textSize="16sp" />
@@ -127,7 +127,7 @@
                 android:layout_height="50dp"
                 android:backgroundTint="#6E6259"
                 android:hint="Confirmar nueva contraseña"
-                android:hintTextColor="#AAA19A"
+                android:textColorHint="#AAA19A"
                 android:inputType="textPassword"
                 android:textColor="#4A3428"
                 android:textSize="16sp" />

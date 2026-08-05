@@ -5,8 +5,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF7FF"
+    android:background="#F5F1EC"
     tools:context=".ReportesActivity">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:background="#7D523B"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnRegresar"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="regresar"
+            android:text="Regresar"
+            android:textAllCaps="false"
+            android:textColor="#7D523B"
+            android:textStyle="bold"
+            app:cornerRadius="24dp" />
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="0dp"
@@ -15,36 +42,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/topBar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingStart="35dp"
-            android:paddingTop="35dp"
+            android:paddingTop="30dp"
             android:paddingEnd="35dp"
             android:paddingBottom="35dp">
-
-            <Button
-                android:id="@+id/btnRegresar"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:backgroundTint="#6F50B5"
-                android:onClick="regresar"
-                android:text="Regresar"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtTituloReportes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Reportes"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -54,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:text="Resumen del catálogo"
-                android:textColor="#6F50B5"
+                android:textColor="#7D523B"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -63,10 +78,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Libros registrados: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -74,10 +89,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Autores registrados: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -85,10 +100,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Editoriales registradas: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -96,10 +111,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Categorías registradas: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -108,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:text="Estado de ejemplares"
-                android:textColor="#6F50B5"
+                android:textColor="#7D523B"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -117,10 +132,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Ejemplares disponibles: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -128,10 +143,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Ejemplares prestados: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -139,10 +154,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Ejemplares dañados: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -151,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:text="Préstamos y devoluciones"
-                android:textColor="#6F50B5"
+                android:textColor="#7D523B"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -160,10 +175,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Préstamos activos: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -171,10 +186,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Préstamos devueltos: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -182,10 +197,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Préstamos cancelados: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -193,10 +208,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Devoluciones registradas: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -205,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:text="Usuarios"
-                android:textColor="#6F50B5"
+                android:textColor="#7D523B"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -214,10 +229,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Usuarios activos: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <TextView
@@ -225,10 +240,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="#EEE7FA"
+                android:background="#E9DED7"
                 android:padding="14dp"
                 android:text="Usuarios inactivos: 0"
-                android:textColor="#3F3A46"
+                android:textColor="#4A3428"
                 android:textSize="17sp" />
 
             <Button
@@ -236,13 +251,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="25dp"
-                android:backgroundTint="#6F50B5"
+                android:backgroundTint="#7D523B"
                 android:onClick="actualizarReporte"
                 android:text="Actualizar reporte"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:cornerRadius="28dp" />
 
         </LinearLayout>
     </ScrollView>
