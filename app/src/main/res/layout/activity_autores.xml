@@ -5,16 +5,24 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF7FF"
+    android:background="#F5F1EC"
     tools:context=".AutoresActivity">
+
+    <View
+        android:id="@+id/topBar"
+        android:layout_width="417dp"
+        android:layout_height="82dp"
+        android:background="#7D523B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnRegresar"
-        android:layout_width="49dp"
+        android:layout_width="60dp"
         android:layout_height="45dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#6F50B5"
+        android:backgroundTint="#FFFFFF"
         android:includeFontPadding="false"
         android:minWidth="0dp"
         android:minHeight="0dp"
@@ -22,43 +30,146 @@
         android:paddingStart="0dp"
         android:paddingTop="0dp"
         android:paddingEnd="0dp"
-        android:paddingBottom="8dp"
+        android:paddingBottom="6dp"
         android:text="←"
         android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textColor="#7D523B"
+        android:textSize="22sp"
         android:textStyle="bold"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/topBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/topBar" />
 
     <TextView
         android:id="@+id/txtTituloAutores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="156dp"
+        android:layout_marginTop="16dp"
         android:text="Autores"
-        android:textColor="#3F3A46"
-        android:textSize="28sp"
+        android:textColor="#4A3428"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/topBar" />
 
     <EditText
         android:id="@+id/txtNombresAutor"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
+        android:backgroundTint="#6E6259"
         android:hint="Nombres"
         android:inputType="text"
+        android:textColor="#4A3428"
+        android:textColorHint="#AAA19A"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegresar" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloAutores" />
+
+    <Button
+        android:id="@+id/btnGuardarAutor"
+        android:layout_width="160dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#7D523B"
+        android:onClick="guardarAutor"
+        android:text="Guardar"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNacionalidadAutor" />
+
+    <Button
+        android:id="@+id/btnActualizarAutor"
+        android:layout_width="160dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#7D523B"
+        android:onClick="actualizarAutor"
+        android:text="Actualizar"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNacionalidadAutor" />
+
+    <Button
+        android:id="@+id/btnLimpiar"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#B58855"
+        android:onClick="limpiarCampos"
+        android:text="Limpiar"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardarAutor" />
+
+    <Button
+        android:id="@+id/btnEliminarAutor"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#B58855"
+        android:onClick="eliminarAutor"
+        android:text="Eliminar"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnActualizarAutor" />
+
+    <EditText
+        android:id="@+id/txtNacionalidadAutor"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#6E6259"
+        android:hint="Nacionalidad"
+        android:inputType="text"
+        android:textColor="#4A3428"
+        android:textColorHint="#AAA19A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtApellidosAutor" />
+
+    <TextView
+        android:id="@+id/txtListaTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Lista de autores"
+        android:textColor="#4A3428"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLimpiar" />
 
     <EditText
         android:id="@+id/txtApellidosAutor"
@@ -67,113 +178,27 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="40dp"
+        android:backgroundTint="#6E6259"
         android:hint="Apellidos"
         android:inputType="text"
+        android:textColor="#4A3428"
+        android:textColorHint="#AAA19A"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombresAutor" />
-
-    <EditText
-        android:id="@+id/txtNacionalidadAutor"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="40dp"
-        android:hint="Nacionalidad"
-        android:inputType="text"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtApellidosAutor" />
-
-    <Button
-        android:id="@+id/btnGuardarAutor"
-        android:layout_width="160dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#6F50B5"
-        android:onClick="guardarAutor"
-        android:text="Guardar"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNacionalidadAutor" />
-
-    <Button
-        android:id="@+id/btnActualizarAutor"
-        android:layout_width="160dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="35dp"
-        android:backgroundTint="#6F50B5"
-        android:onClick="actualizarAutor"
-        android:text="Actualizar"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNacionalidadAutor" />
-
-    <Button
-        android:id="@+id/btnLimpiar"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#8D77CC"
-        android:onClick="limpiarCampos"
-        android:text="Limpiar"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGuardarAutor" />
-
-    <Button
-        android:id="@+id/btnEliminarAutor"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="35dp"
-        android:backgroundTint="#8D77CC"
-        android:onClick="eliminarAutor"
-        android:text="Eliminar"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnActualizarAutor" />
-
-    <TextView
-        android:id="@+id/txtListaTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Lista de autores"
-        android:textColor="#3F3A46"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLimpiar" />
 
     <ListView
         android:id="@+id/listaAutores"
         android:layout_width="0dp"
         android:layout_height="210dp"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="35dp"
-        android:background="#EEE7FA"
+        android:background="#E9DED7"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtListaTitulo" />
 
